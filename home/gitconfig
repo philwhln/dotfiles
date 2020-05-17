@@ -1,0 +1,12 @@
+[user]
+	name = Phil Whelan
+
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+
+[includeIf "gitdir:~/src/philwhln/"]
+	path = ~/.gitconfig-philwhln
+
+[includeIf "gitdir:~/src/bench/"]
+	path = ~/.gitconfig-bench

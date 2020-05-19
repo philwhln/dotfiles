@@ -5,8 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+BREW_ROOT="$(brew --prefix)"
+
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$BREW_ROOT/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -126,5 +128,12 @@ export PATH=$PATH:~/go/bin
 export PATH=~/.goenv/shims:$PATH:$GOPATH/bin
 
 export AWS_PAGER=""
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C "${BREW_ROOT}/bin/vault" vault
+complete -o nospace -C "${BREW_ROOT}/bin/packer" packer
+complete -o nospace -C "${BREW_ROOT}/bin/consul" consul
+complete -o nospace -C "${BREW_ROOT}/bin/terraform" terraform
+typeset -aU path;
 
 source "${HOME}"/.zsh_aliases

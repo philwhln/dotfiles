@@ -4,6 +4,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "linuxbrew/xorg" if OS.linux?
 tap "olets/tap"
 tap "reactiveops/tap"
 brew "aws-iam-authenticator"

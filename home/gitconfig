@@ -4,6 +4,7 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+	pager =
 
 [includeIf "gitdir:~/src/philwhln/"]
 	path = ~/.gitconfig-philwhln

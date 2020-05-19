@@ -5,10 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-BREW_ROOT="$(brew --prefix)"
-
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$BREW_ROOT/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/home/linuxbrew/.linuxbrew/bin:$PATH
+
+BREW_ROOT="$(brew --prefix)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

@@ -1,0 +1,8 @@
+alias aws-ssh="aws ssm start-session --target"
+alias aws-whoami="aws sts get-caller-identity"
+
+alias update-brew="brew bundle cleanup --force --global && \
+                   brew update && \
+                   brew upgrade && \
+                   brew cleanup"
+alias update-all="upgrade_oh_my_zsh && update-brew"

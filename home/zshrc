@@ -126,3 +126,5 @@ export PATH=$PATH:~/go/bin
 export PATH=~/.goenv/shims:$PATH:$GOPATH/bin
 
 export AWS_PAGER=""
+
+source "${HOME}"/.zsh_aliases

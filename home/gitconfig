@@ -11,7 +11,9 @@
 
 [includeIf "gitdir:~/src/bench/"]
 	path = ~/.gitconfig-bench
+
 [commit]
 	gpgsign = true
+
 [pull]
 	ff = only

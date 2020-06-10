@@ -137,3 +137,5 @@ complete -o nospace -C "${BREW_ROOT}/bin/terraform" terraform
 typeset -aU path;
 
 source "${HOME}"/.zsh_aliases
+
+unsetopt share_history

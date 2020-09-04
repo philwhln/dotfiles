@@ -122,6 +122,7 @@ export NVM_DIR=~/.nvm
 NVM_ROOT="$(brew --prefix nvm)"
 source "${NVM_ROOT}/nvm.sh"
 source "${NVM_ROOT}/etc/bash_completion.d/nvm"
+export PATH=$PATH:./node_modules/.bin
 
 export PATH=$PATH:~/go/bin
 

@@ -25,13 +25,11 @@ dist/
 
 *.7z
 *.dmg
-*.gz
 *.iso
 *.jar
 .git
 *.rar
 *.tar
-*.zip
 
 *.com
 *.class

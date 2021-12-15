@@ -10,6 +10,12 @@ export PATH=$HOME/bin:/usr/local/bin:/home/linuxbrew/.linuxbrew/bin:$PATH
 
 BREW_ROOT="$(brew --prefix)"
 
+# pyenv
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init --path)"
+
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -75,19 +81,20 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  colored-man-pages
-  sudo
-  git
-  aws
-  docker
-  docker-compose
-  kubectl
-  terraform
-  vagrant
-  pip
-  pyenv
+  #colored-man-pages
+  #sudo
+  #git
+  #aws
+  #docker
+  #docker-compose
+  #kubectl
+  #terraform
+  #vagrant
+  #pip
+  #poetry
+  #pyenv
   zsh-abbr
-  zsh-autosuggestions
+  #zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,14 +112,14 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-[[ ! -f /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] || \
-  source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#[[ ! -f /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] || \
+#  source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ ! -f /home/linuxbrew/.linuxbrew/share/zsh-abbr/zsh-abbr.zsh ]] || \
   source /home/linuxbrew/.linuxbrew/share/zsh-abbr/zsh-abbr.zsh
 [[ ! -f ~/.oh-my-zsh/custom/plugins/zsh-abbr/zsh-abbr.zsh ]] || \
  source ~/.oh-my-zsh/custom/plugins/zsh-abbr/zsh-abbr.zsh
-[[ ! -f ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] || \
- source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#[[ ! -f ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] || \
+# source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || \
@@ -131,12 +138,29 @@ export PATH=~/.goenv/shims:$PATH:$GOPATH/bin
 export AWS_PAGER=""
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C "${BREW_ROOT}/bin/vault" vault
-complete -o nospace -C "${BREW_ROOT}/bin/packer" packer
-complete -o nospace -C "${BREW_ROOT}/bin/consul" consul
+#complete -o nospace -C "${BREW_ROOT}/bin/vault" vault
+#complete -o nospace -C "${BREW_ROOT}/bin/packer" packer
+#complete -o nospace -C "${BREW_ROOT}/bin/consul" consul
 complete -o nospace -C "${BREW_ROOT}/bin/terraform" terraform
 typeset -aU path;
 
 source "${HOME}"/.zsh_aliases
 
 unsetopt share_history
+
+# The next line updates PATH for the Google Cloud SDK.
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+# The next line enables shell command completion for gcloud.
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+export PATH="/usr/local/opt/texinfo/bin:$PATH"
+export PATH="$PATH:~/go/bin"
+#export PATH="$PATH:~/src/colony/yampack"
+export PATH="$PATH:~/src/momentum/infrastructure/utils/scripts"
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+export HELM_EXPERIMENTAL_OCI=1
+
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+

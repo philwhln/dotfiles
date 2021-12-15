@@ -1,0 +1,6 @@
+[url "git@github.com:"]
+  insteadOf = "https://github.com/"
+
+[user]
+email = phil@momentum.io
+signingkey = E8010C1C

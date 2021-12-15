@@ -1,19 +1,35 @@
 [user]
 	name = Phil Whelan
+	email = phil123@gmail.com
 
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
 	pager =
+	ignorecase = false
 
 [includeIf "gitdir:~/src/philwhln/"]
 	path = ~/.gitconfig-philwhln
 
+[includeIf "gitdir:~/src/hashicorp/"]
+	path = ~/.gitconfig-momentum
+
 [includeIf "gitdir:~/src/bench/"]
 	path = ~/.gitconfig-bench
 
-#[commit]
-#	gpgsign = true
+[includeIf "gitdir:~/src/momentum/"]
+	path = ~/.gitconfig-momentum
+
+[includeIf "gitdir:~/ypm/"]
+        path = ~/.gitconfig-colony
+
+[commit]
+	#gpgsign = true
 
 [pull]
 	ff = only
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

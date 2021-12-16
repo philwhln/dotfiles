@@ -9,6 +9,7 @@ echo "Configuring dotfiles..."
 cd ./home || exit
 find * -type d -exec mkdir -p "${HOME}"/.{} \;
 find * -type f -exec ln -sf "${PWD}"/{} "${HOME}"/.{} \;
+ln -sf "${PWD}/.config/zsh/abbreviations" "${HOME}/.config/zsh/abbreviations"
 echo "Completed Configuring dotfiles!"
 
 echo "Installing Homebrew"

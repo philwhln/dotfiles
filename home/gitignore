@@ -41,4 +41,5 @@ dist/
 *.log
 
 *.pem
-
+.swcrc
+src/test-query.ts
